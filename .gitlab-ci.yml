@@ -1,0 +1,13 @@
+stages:
+  - build
+
+variables:
+  NIX_PATH: nixpkgs=channel:nixos-25.05
+
+build:
+  stage: build
+  image: nixos/nix:2.18.1
+  script:
+    - nix --extra-experimental-features 'nix-command flakes' develop --command npx pxt build
+    - sha1sum built/*
+    - md5sum built/*

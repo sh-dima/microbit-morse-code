@@ -1,0 +1,9 @@
+# Modules
+node_modules/
+pxt_modules/
+
+# PXT
+.pxt/
+
+# Build
+built/

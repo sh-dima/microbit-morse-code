@@ -1,0 +1,6 @@
+{
+  "name": "microbit-morse-code",
+  "dependencies": {
+    "pxt-microbit": "^8.1.6"
+  }
+}
