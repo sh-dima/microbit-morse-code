@@ -42,28 +42,17 @@ const morseCode = {
     "end": "ABAB"
 };
 
-const terminateSequence = "AAAAAB";
-
 let stringToSend = "";
 let currentlyTypingString = "";
 
 const invertedMorseCode = invertObject(morseCode);
 
 const getMatch = () => {
-    if (currentlyTypingString.indexOf(terminateSequence) === -1) {
-        return null
-    }
-
     console.log("-------------------");
     console.log("Detected termination sequence.")
     console.log("The currently typed string is: " + currentlyTypingString);
     
-    const slice = currentlyTypingString.slice(0, currentlyTypingString.length - terminateSequence.length)
-
-    console.log("The slice to check is: " + slice);
-    console.log("-------------------");
-
-    const letter = invertedMorseCode[slice];
+    const letter = invertedMorseCode[currentlyTypingString];
 
     console.log("The letter is: " + letter);
     console.log("-------------------");
@@ -96,17 +85,22 @@ const onButtonAPressed = () => {
     console.log("Button A pressed.")
 
     currentlyTypingString += "A";
-    checkMatch();
 };
 
 const onButtonBPressed = () => {
     console.log("Button B pressed.")
 
     currentlyTypingString += "B";
+}
+
+const onButtonABPressed = () => {
+    console.log("Buttons A and B pressed")
+
     checkMatch();
 }
 
 input.onButtonPressed(Button.A, onButtonAPressed);
 input.onButtonPressed(Button.B, onButtonBPressed);
+input.onButtonPressed(Button.AB, onButtonABPressed);
 
 radio.onReceivedString((receivedString) => basic.showString(receivedString));
