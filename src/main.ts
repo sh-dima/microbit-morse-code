@@ -26,6 +26,7 @@ const morseCode = {
     "t": "B",
     "u": "AAB",
     "v": "AAAB",
+    "w": "ABB",
     "x": "BAAB",
     "y": "BABB",
     "z": "BBAA",
