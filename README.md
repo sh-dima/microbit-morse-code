@@ -17,7 +17,7 @@ In the above diagram:
 1. Button **A** is a short signal.
 2. Button **B** is a long signal.
 3. Begin by typing out a letter using the **A** and **B** buttons.
-4. When you are done, type the termination sequence **AAAAAB**. This will add the letter to the current string waiting to be sent.
+4. When you are done, press **A** and **B** at the same time. This will add the letter to the current string waiting to be sent.
 5. To send the current string, type the *end* character by typing **ABAB**. This will send the string to all other microbits on the radio frequency.
 
 License
