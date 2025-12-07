@@ -45,6 +45,7 @@ const morseCode = {
 
 let stringToSend = "";
 let currentlyTypingString = "";
+let previousLetter = "";
 
 const invertedMorseCode = invertObject(morseCode);
 
@@ -53,13 +54,17 @@ const getMatch = () => {
     console.log("Detected termination sequence.")
     console.log("The currently typed string is: " + currentlyTypingString);
     
-    const letter = invertedMorseCode[currentlyTypingString];
+    let letter = invertedMorseCode[currentlyTypingString];
+    if (letter == null) {
+        letter = previousLetter;
+    }
 
     console.log("The letter is: " + letter);
     console.log("-------------------");
 
     basic.showString(letter);
 
+    previousLetter = letter;
     return letter;
 }
 

@@ -20,6 +20,8 @@ In the above diagram:
 4. When you are done, press **A** and **B** at the same time. This will add the letter to the current string waiting to be sent.
 5. To send the current string, type the *end* character by typing **ABAB**. This will send the string to all other microbits on the radio frequency.
 
+Note: pressing **A** and **B** at the same time with nothing typed will add the previous letter to the string waiting to be sent.
+
 Links
 -----
 
